@@ -1,0 +1,129 @@
+package in.nic.ashwini.eForms.security.granters;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AccountStatusException;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.common.exceptions.InvalidGrantException;
+import org.springframework.security.oauth2.common.exceptions.InvalidRequestException;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.provider.ClientDetails;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.OAuth2Request;
+import org.springframework.security.oauth2.provider.TokenRequest;
+import org.springframework.security.oauth2.provider.token.AbstractTokenGranter;
+import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import in.nic.ashwini.eForms.exception.MfaRequiredException;
+import in.nic.ashwini.eForms.service.MfaService;
+import in.nic.ashwini.eForms.service.UtilityService;
+import in.nic.ashwini.eForms.service.ValidationService;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class PasswordTokenGranter extends AbstractTokenGranter {
+	private static final String GRANT_TYPE = "password";
+	private final AuthenticationManager authenticationManager;
+	private final MfaService mfaService;
+	private final UtilityService utilityService;
+	private final ValidationService validationService;
+	
+	public PasswordTokenGranter(AuthorizationServerEndpointsConfigurer endpointsConfigurer,
+			AuthenticationManager authenticationManager, MfaService mfaService, UtilityService utilityService,
+			ValidationService validationService) {
+		super(endpointsConfigurer.getTokenServices(), endpointsConfigurer.getClientDetailsService(),
+				endpointsConfigurer.getOAuth2RequestFactory(), GRANT_TYPE);
+		this.authenticationManager = authenticationManager;
+		this.mfaService = mfaService;
+		this.utilityService = utilityService;
+		this.validationService = validationService;
+	}
+
+	@Override
+	protected OAuth2Authentication getOAuth2Authentication(ClientDetails client, TokenRequest tokenRequest) {
+		Map<String, String> parameters = new LinkedHashMap<>(tokenRequest.getRequestParameters());
+		if(!parameters.containsKey("username")) {
+			throw new InvalidRequestException("Missing username!!!");
+		}
+		String username = parameters.get("username");
+		if(username == null || (username != null && username.isEmpty())) {
+			log.debug("Email address is empty");
+			throw new BadCredentialsException("Email address can not be empty!!!");
+		}
+		if(!validationService.isFormatValid("email", username)) {
+			log.debug("Invalid Email format.!!!");
+			throw new BadCredentialsException("Invalid Email format.!!!");
+		}
+		if(!parameters.containsKey("password")) {
+			log.debug("Missing password!!!");
+			throw new InvalidRequestException("Missing password!!!");
+		}
+		String password = parameters.get("password");
+		if(password == null || (password != null && password.isEmpty())) {
+			log.debug("Password is empty!!!");
+			throw new BadCredentialsException("Password can not be empty!!!");
+		}
+		parameters.remove("password");
+		Authentication userAuth = new UsernamePasswordAuthenticationToken(username, password);
+
+		try {
+			userAuth = this.authenticationManager.authenticate(userAuth);
+		} catch (AccountStatusException | BadCredentialsException e) {
+			throw new BadCredentialsException(e.getMessage());
+		}
+
+		if (userAuth != null && userAuth.isAuthenticated()) {
+			OAuth2Request storedOAuth2Request = this.getRequestFactory().createOAuth2Request(client, tokenRequest);
+			Collection<GrantedAuthority> authorities = null;
+			boolean otpGenerated = false;
+			String message = "";
+			if(utilityService.isSupportEmail(username)) {
+				authorities = Arrays.asList(new SimpleGrantedAuthority("ROLE_PRE_AUTH"), new SimpleGrantedAuthority("ROLE_SUPPORT_USER"));
+			}else {
+				authorities = Arrays.asList(new SimpleGrantedAuthority("ROLE_PRE_AUTH"));
+				
+				// Generate OTP and send SMS to mobile phone
+				String mobile = utilityService.fetchMobile(username).trim();
+				mobile = utilityService.transformMobile(mobile);
+				
+				if(!mfaService.isMobileOtpActive(mobile)) {
+					mfaService.generateMobileOtp(mobile);
+					otpGenerated = true;
+				}
+				
+				if(otpGenerated) {
+					try {
+						message = "Please enter the OTP sent to "+ utilityService.maskString(mobile, 4, mobile.length()-3, '*');
+					} catch (Exception e) {
+						message = "Please enter the OTP sent to registered mobile number";
+					}
+				}else {
+					try {
+						message = "Old otp sent on "+ utilityService.maskString(mobile, 4, mobile.length()-3, '*') +" is still valid. Please enter the OTP to proceed.";
+					} catch (Exception e) {
+						message = "Old OTP sent on registered mobile number is still valid. Please use that to proceed.";
+					}
+				}
+				
+				//Send SMS also
+			}
+			
+			userAuth = new UsernamePasswordAuthenticationToken(userAuth.getName(), "", authorities);
+			OAuth2AccessToken accessToken = getTokenServices().createAccessToken(new OAuth2Authentication(storedOAuth2Request, userAuth));
+			throw new MfaRequiredException(accessToken.getValue(), message, "");
+		}
+		throw new InvalidGrantException("Could not authenticate user: " + username);
+	}
+}

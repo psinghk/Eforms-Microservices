@@ -1,0 +1,21 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f30883f0231, pid=30098, tid=30116
+#
+# JRE version: OpenJDK Runtime Environment (14.0.2+12) (build 14.0.2+12-46)
+# Java VM: OpenJDK 64-Bit Server VM (14.0.2+12-46, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x4231]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x71
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e %P %I %h" (or dumping to /home/preeti/Desktop/SunnyVerma/workspace1/BulkServer/core.30098)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:46022 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=45568 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=BulkServer -javaagent:/home/preeti/Downloads/sts-4.8.0.RELEASE/configuration/org.eclipse.osgi/257/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 in.nic.ashwini.eForms.EFormsResourceServerApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz, 8 cores, 15G, 

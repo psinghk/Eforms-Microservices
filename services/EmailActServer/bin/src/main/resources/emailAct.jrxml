@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e62cfcd3-cce1-4882-995e-75855e19dba3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="regid" class="java.lang.String"/>
+	<parameter name="applicant_name" class="java.lang.String"/>
+	<parameter name="applicant_email" class="java.lang.String"/>
+	<parameter name="applicant_mobile" class="java.lang.String"/>
+	<parameter name="min" class="java.lang.String"/>
+	<parameter name="hod_name" class="java.lang.String"/>
+	<parameter name="hod_email" class="java.lang.String"/>
+	<parameter name="hod_mobile" class="java.lang.String"/>
+	<parameter name="Preferred Email1" class="java.lang.String"/>
+	<parameter name="Dor" class="java.lang.String"/>
+	<parameter name="WorkOrder" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="140" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="140" backcolor="#D14B4E" uuid="6895c7e8-8b67-4f50-899a-d7279eae47a0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-20" y="0" width="591" height="111" forecolor="#FFFDFC" backcolor="#1B3DA1" uuid="1b302ce4-0ce3-4229-8fa9-788b7cb90279"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Government of India
+Ministry of Electronics & Information Technology 
+NATIONAL INFORMATICS CENTRE]]></text>
+			</staticText>
+			<image>
+				<reportElement x="240" y="90" width="48" height="50" uuid="8e226c27-f58f-4043-b43d-ef03c28880fc"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-2" width="594" height="42" backcolor="#D1D6ED" uuid="a69556b6-3caa-4ac4-9364-fe0513a3ef88"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="180" y="4" width="230" height="30" forecolor="#FC0905" uuid="acb8ee4d-c3c4-44e6-b3cd-ec0201cbb7a6"/>
+				<textElement>
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Email Activation Update request form]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="10" width="532" height="90" uuid="ec042965-8215-4cca-933a-794dd1834a66"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[(In case of manual submission, the completed application form, duly sealed and signed, must be uploaded back to eForms portal by the applicant and his/her Reporting/Nodal/Forwarding Officer) Please sign on each page. Entries marked asterisk(*) are mandatory.
+ ]]></text>
+			</staticText>
+		</band>
+		<band height="411">
+			<staticText>
+				<reportElement x="220" y="10" width="220" height="210" uuid="699d2cc9-00a5-460c-877c-ab156391ab34"/>
+				<text><![CDATA[Static Text detail 2 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh f]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="0" width="561" height="390" backcolor="#FCCFD7" uuid="67a7f578-c8c4-4859-804e-b8c7d02a0c98"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="44" y="21" width="151" height="31" uuid="d448a621-daff-4f89-9a64-27ad8a530b40"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Registration No*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="22" width="325" height="20" forecolor="#FA1D19" uuid="6d07b21a-083d-453c-9f51-76e3d47cffdb"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{regid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="53" width="121" height="21" uuid="eb978323-fa7e-4979-91cf-201466c78c5b"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Applicant Name*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="52" width="325" height="22" uuid="5495f8d2-3d2d-4083-a373-e5149c90f37c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicant_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="83" width="120" height="20" uuid="5b9bb432-0da6-47cc-a32b-3fcfcda7c523"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Applicant Email*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="83" width="325" height="25" uuid="7b00c25a-fc1b-4d5c-bc0c-8162f8b78989"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicant_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="113" width="130" height="21" uuid="5c6efa12-d5c4-44d6-a1ec-d1fdc0546503"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Applicant Mobile*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="113" width="325" height="21" uuid="45d29398-2fc3-44d5-ab43-357d12df37ca"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicant_mobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="143" width="149" height="21" uuid="fde036b1-35d6-487d-b974-70aec5d95220"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ministry/Department*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="142" width="325" height="41" uuid="d4bae3b6-947b-40fe-877f-4520e20fd9c2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{min}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="181" width="282" height="30" uuid="63397ab0-67f3-4b57-9d7e-7a55758c39d6"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporting/Nodal/Forwarding Officer Name*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="180" width="215" height="30" uuid="cc05c6c4-2401-4429-a3fe-f5c0455a440c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hod_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="210" width="272" height="30" uuid="a7aab708-b80d-4687-b9fa-412bebf0cfc9"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporting/Nodal/Forwarding Officer Email*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="211" width="231" height="30" uuid="9f766b41-3236-49d5-94b8-ad8394d7a4ae"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hod_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="240" width="281" height="30" uuid="4e7e45d5-5303-4dc2-8d44-5f1c7b9fd451"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporting/Nodal/Forwarding Officer Mobile*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="322" y="241" width="229" height="30" uuid="ed11ef79-4ede-4576-b419-53c7bea81c69"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hod_mobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="272" width="170" height="20" uuid="21222949-8aa6-4218-b775-a5aa2dd3dd13"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[PreferEmail*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="218" y="272" width="300" height="26" uuid="b01b5113-2a23-408d-ae0f-d72f246272c7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Preferred Email1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="303" width="170" height="20" uuid="0feb8a9b-0d25-49a8-b940-daf775d858fd"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[DOR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="217" y="303" width="300" height="22" uuid="2afe85fe-88e5-4faa-89da-0c2ea80b2406"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Dor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="338" width="170" height="20" uuid="cc03ea43-9c03-449f-8a0b-8788eeebbfd3"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Workorder]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="218" y="337" width="300" height="22" uuid="c5b88460-301a-42b6-8789-8acd44571a6d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{WorkOrder}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="700">
+			<rectangle>
+				<reportElement x="0" y="49" width="560" height="631" backcolor="#FCCFD7" uuid="7b67dca2-10fb-45ba-8f2a-7cf396a6ca56"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="15" y="55" width="535" height="595" uuid="6c35eee7-b136-401c-bd22-7ee48f5422bf"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[1. Users are requested to install the personal firewall software to secure their machine and e-mail traffic.
+
+ 2. Users are requested to install the Antivirus software with latest pattern update periodically and OS patches in their system. 
+
+ 3. If using Outlook, Outlook Express, Mozilla Firefox on Microsoft WINDOWS, please apply the appropriate patches announced by the Microsoft/ Mozilla from time to time. 
+
+ 4. NIC is not responsible for the contents that are being sent as part of the mail. The views expressed are solely that of the originator. 
+
+ 5. NIC will take all possible measures to prevent data loss, however, due to unforeseen technical issues, if the same happens, NIC cannot be held responsible.
+
+ 6. User is responsible for his/her data. In case he/she accidentally deletes data, he/she will not ask NIC to restore it. Individuals are responsible for saving email messages as they deem appropriate. Messages will be automatically purged from folders as follows:      Trash - 7 days     ProbablySpam – 7 days 
+
+ 7. NIC account will be deactivated, if not used for 90 days. 
+
+ 8. Email id will be deleted after a period of 9 months from the date of deactivation if no request for activation is received.
+
+ 9. Contact our 24x7 support if you have any problems. Phone <b>1800-111-555</b> or you can send mail to servicedesk.nic.in 
+
+ 10. Please note that advance payment is a must for paid users. 
+
+ 11. NIC coordinator reserves the right to ask for supporting documents like copy of identify card or any other document deemed appropriate to confirm the credentials of the applicant. 
+
+ 12. NIC will not share the details of Email Accounts and Email Addresses with anyone unless authorized by Reporting/Nodal/Forwarding Officer of the Department.
+
+ 13. NIC does not capture any aadhaar related information.
+ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="7" width="180" height="37" forecolor="#F70E0A" uuid="230bca2c-d966-40f2-bad2-c59a59c43e64"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terms and Conditions]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="230" y="20" width="100" height="30" uuid="a60e7486-52d0-4b38-9345-99bf99fe2baf"/>
+				<text><![CDATA[Page footer]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="10" y="10" width="550" height="50" forecolor="#050505" backcolor="#D14B4E" uuid="cd65eaeb-2e25-4b49-bea5-367705fd9448"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="50" y="20" width="490" height="23" forecolor="#FCFAFA" uuid="e97d18bf-8df5-48ae-916e-bf3e45bf7df6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address: 3rd Floor, Block III, Delhi IT Park, Shastri Park, Delhi, 110053]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="50" splitType="Stretch"/>
+	</summary>
+</jasperReport>

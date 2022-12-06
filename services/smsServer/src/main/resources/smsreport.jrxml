@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e62cfcd3-cce1-4882-995e-75855e19dba3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="regid" class="java.lang.String"/>
+	<parameter name="applicant_name" class="java.lang.String"/>
+	<parameter name="applicant_email" class="java.lang.String"/>
+	<parameter name="applicant_mobile" class="java.lang.String"/>
+	<parameter name="min" class="java.lang.String"/>
+	<parameter name="hod_name" class="java.lang.String"/>
+	<parameter name="hod_email" class="java.lang.String"/>
+	<parameter name="hod_mobile" class="java.lang.String"/>
+	<parameter name="app_name" class="java.lang.String"/>
+	<parameter name="app_url" class="java.lang.String"/>
+	<parameter name="sms_usage" class="java.lang.String"/>
+	<parameter name="server_loc" class="java.lang.String"/>
+	<parameter name="server_loc_txt" class="java.lang.String"/>
+	<parameter name="base_ip" class="java.lang.String"/>
+	<parameter name="service_ip" class="java.lang.String"/>
+	<parameter name="t_off_name" class="java.lang.String"/>
+	<parameter name="tdesignation" class="java.lang.String"/>
+	<parameter name="temp_code" class="java.lang.String"/>
+	<parameter name="taddrs" class="java.lang.String"/>
+	<parameter name="tcity" class="java.lang.String"/>
+	<parameter name="tstate" class="java.lang.String"/>
+	<parameter name="tpin" class="java.lang.String"/>
+	<parameter name="ttel_ofc" class="java.lang.String"/>
+	<parameter name="ttel_res" class="java.lang.String"/>
+	<parameter name="tmobile" class="java.lang.String"/>
+	<parameter name="tauth_email" class="java.lang.String"/>
+	<parameter name="bauth_off_name" class="java.lang.String"/>
+	<parameter name="bdesignation" class="java.lang.String"/>
+	<parameter name="bemp_code" class="java.lang.String"/>
+	<parameter name="baddrs" class="java.lang.String"/>
+	<parameter name="bcity" class="java.lang.String"/>
+	<parameter name="bstate" class="java.lang.String"/>
+	<parameter name="bpin" class="java.lang.String"/>
+	<parameter name="btel_ofc" class="java.lang.String"/>
+	<parameter name="btel_res" class="java.lang.String"/>
+	<parameter name="bmobile" class="java.lang.String"/>
+	<parameter name="bauth_email" class="java.lang.String"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="140" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="0" width="595" height="140" backcolor="#D14B4E" uuid="6895c7e8-8b67-4f50-899a-d7279eae47a0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-20" y="0" width="591" height="111" forecolor="#FFFDFC" backcolor="#1B3DA1" uuid="1b302ce4-0ce3-4229-8fa9-788b7cb90279"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Government of India
+Ministry of Electronics & Information Technology 
+NATIONAL INFORMATICS CENTRE]]></text>
+			</staticText>
+			<image>
+				<reportElement x="240" y="90" width="48" height="50" uuid="8e226c27-f58f-4043-b43d-ef03c28880fc"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="-2" width="594" height="42" backcolor="#D1D6ED" uuid="a69556b6-3caa-4ac4-9364-fe0513a3ef88"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="180" y="4" width="230" height="30" forecolor="#FC0905" uuid="acb8ee4d-c3c4-44e6-b3cd-ec0201cbb7a6"/>
+				<textElement>
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SMS Update request form]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="10" width="532" height="90" uuid="ec042965-8215-4cca-933a-794dd1834a66"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[(In case of manual submission, the completed application form, duly sealed and signed, must be uploaded back to eForms portal by the applicant and his/her Reporting/Nodal/Forwarding Officer) Please sign on each page. Entries marked asterisk(*) are mandatory.
+ ]]></text>
+			</staticText>
+		</band>
+		<band height="411">
+			<staticText>
+				<reportElement x="220" y="10" width="220" height="210" uuid="699d2cc9-00a5-460c-877c-ab156391ab34"/>
+				<text><![CDATA[Static Text detail 2 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh fStatic Text detail 1 sd sads ds dsad dfdf dsf ds fds f df df d ds fd f dsf ds fds f f f ds fd f f f df d fd f dsf d f ffdsf ds ff f ds f d gf hg fdh f]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="0" width="561" height="390" backcolor="#FCCFD7" uuid="67a7f578-c8c4-4859-804e-b8c7d02a0c98"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="44" y="21" width="151" height="31" uuid="d448a621-daff-4f89-9a64-27ad8a530b40"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Registration No*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="22" width="325" height="20" forecolor="#FA1D19" uuid="6d07b21a-083d-453c-9f51-76e3d47cffdb"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{regid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="53" width="121" height="21" uuid="eb978323-fa7e-4979-91cf-201466c78c5b"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Applicant Name*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="52" width="325" height="22" uuid="5495f8d2-3d2d-4083-a373-e5149c90f37c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicant_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="83" width="120" height="20" uuid="5b9bb432-0da6-47cc-a32b-3fcfcda7c523"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Applicant Email*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="83" width="325" height="25" uuid="7b00c25a-fc1b-4d5c-bc0c-8162f8b78989"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicant_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="113" width="130" height="21" uuid="5c6efa12-d5c4-44d6-a1ec-d1fdc0546503"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ Applicant Mobile*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="113" width="325" height="21" uuid="45d29398-2fc3-44d5-ab43-357d12df37ca"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicant_mobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="143" width="149" height="21" uuid="fde036b1-35d6-487d-b974-70aec5d95220"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Ministry/Department*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="142" width="325" height="41" uuid="d4bae3b6-947b-40fe-877f-4520e20fd9c2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{min}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="181" width="282" height="30" uuid="63397ab0-67f3-4b57-9d7e-7a55758c39d6"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporting/Nodal/Forwarding Officer Name*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="180" width="215" height="30" uuid="cc05c6c4-2401-4429-a3fe-f5c0455a440c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hod_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="210" width="272" height="30" uuid="a7aab708-b80d-4687-b9fa-412bebf0cfc9"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporting/Nodal/Forwarding Officer Email*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="211" width="231" height="30" uuid="9f766b41-3236-49d5-94b8-ad8394d7a4ae"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hod_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="240" width="281" height="30" uuid="4e7e45d5-5303-4dc2-8d44-5f1c7b9fd451"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporting/Nodal/Forwarding Officer Mobile*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="322" y="241" width="229" height="30" uuid="ed11ef79-4ede-4576-b419-53c7bea81c69"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hod_mobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="272" width="170" height="20" uuid="21222949-8aa6-4218-b775-a5aa2dd3dd13"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Applicant Name*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="218" y="272" width="300" height="26" uuid="b01b5113-2a23-408d-ae0f-d72f246272c7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{app_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="303" width="170" height="20" uuid="0feb8a9b-0d25-49a8-b940-daf775d858fd"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Applicant Url*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="217" y="303" width="300" height="22" uuid="2afe85fe-88e5-4faa-89da-0c2ea80b2406"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{app_url}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="338" width="170" height="20" uuid="cc03ea43-9c03-449f-8a0b-8788eeebbfd3"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Purpose of Application*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="218" y="337" width="300" height="22" uuid="c5b88460-301a-42b6-8789-8acd44571a6d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sms_usage}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="700">
+			<rectangle>
+				<reportElement x="-2" y="30" width="561" height="500" backcolor="#FCCFD7" uuid="b3b2f72c-745b-46e5-8552-a85cb3ba779c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="22" y="50" width="166" height="20" uuid="399ba7fa-2f71-4c47-a993-6eb7f70f67ea"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Server Location*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="212" y="50" width="300" height="22" uuid="b39eb924-34fa-420b-9833-bd8e89946763"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{server_loc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="23" y="79" width="168" height="20" uuid="b22f2dc7-785b-4d6d-9f54-c4cfe9c5e2d6"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Server Location txt*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="213" y="78" width="324" height="22" uuid="6dd1c35e-acbc-4161-87d4-8eed57a0c487"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{server_loc_txt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="23" y="110" width="166" height="20" uuid="118dac15-6193-4c5b-9696-24562a06f68d"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Base IP*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="109" width="324" height="22" uuid="9024865f-9690-4907-9ceb-7ae0745c8b4b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{base_ip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="23" y="134" width="164" height="20" uuid="b5950a04-86f0-42c7-9ef5-e938ece134e2"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Service IP*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="133" width="324" height="22" uuid="5d3680db-7f5c-42cb-9ead-78df1d4ea530"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{service_ip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="162" width="160" height="20" uuid="7d860dfd-e919-4eac-b6eb-751b35030e6a"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Technical Name*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="161" width="324" height="22" uuid="b58c7688-0ce5-4317-8471-9ced07367029"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{t_off_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="190" width="162" height="20" uuid="8961b288-06d9-4bae-9dce-6fd2c960378d"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tech Designation*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="199" width="330" height="22" uuid="c74d09e2-45a1-449b-a594-3ac3c190a283"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tdesignation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="221" width="150" height="20" uuid="b4de764e-eb60-43b4-bc16-cf55ae643a3b"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Temp Code]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="211" y="230" width="322" height="22" uuid="788ce124-1cd0-4402-99fc-559576cf0187"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{temp_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="260" width="158" height="20" uuid="3641b59c-95f7-4b70-a503-51045070dfd8"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tech Address*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="212" y="260" width="332" height="22" uuid="cfd482e8-cf2f-4786-bd38-a56229e73935"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taddrs}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="296" width="154" height="20" uuid="565d3274-c5f4-4966-a494-4d9794ea49cb"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tech city]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="211" y="295" width="328" height="22" uuid="dc88566a-761b-4de0-9ade-d3f597b5d652"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tcity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="326" width="154" height="20" uuid="a055b273-adb6-4246-b36c-b074b0525de2"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tech State*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="325" width="336" height="22" uuid="7cadb813-b9fa-46c4-a043-4c7692500f89"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tstate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="416" width="154" height="20" uuid="23f4e9b6-cfa6-41f0-a820-4d75b30a3e0f"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tech Pin]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="207" y="415" width="336" height="22" uuid="1f31f2dd-3127-4591-815c-195572d34586"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tpin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="386" width="154" height="20" uuid="bd88922f-255c-4d7f-8a6f-1a0d95e4a335"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Telephone Office*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="208" y="385" width="334" height="22" uuid="5a989fe9-5589-41b2-8dd6-92dfac9a16ce"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ttel_ofc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="356" width="154" height="20" uuid="42af971b-f8d1-457e-9c10-a048ad4e31c0"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Telephone Residance]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="209" y="355" width="332" height="22" uuid="b54f2a5c-04d5-48e0-b6e7-a8ffae2af679"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ttel_res}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="450" width="154" height="20" uuid="e2fae119-25c6-4ffc-9a4c-41d1879f7232"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tech Mobile*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="206" y="448" width="330" height="22" uuid="7990ca2b-5646-447c-8e51-1880bae63e91"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tmobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="481" width="154" height="20" uuid="064ef0f6-c802-4f30-be7b-964f09ada2c7"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tech Email*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="479" width="326" height="22" uuid="be479475-395e-493f-9c09-f29a17e5e673"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tauth_email}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="700">
+			<rectangle>
+				<reportElement x="10" y="30" width="518" height="409" backcolor="#FCCFD7" uuid="8ff311ef-b8b4-4c1b-9fe9-e184c2c88914"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="34" y="52" width="158" height="20" uuid="ae5ea84f-4f57-4a55-b46c-7d9b780c643a"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner Name*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="203" y="50" width="332" height="22" uuid="281f6d48-903a-4ab7-aa0a-76b3e2d758f7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bauth_off_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="90" width="158" height="20" uuid="021f04ab-bdd0-421e-a2c8-8897ccb2f920"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner Designation*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="206" y="88" width="330" height="22" uuid="16676b71-8129-4402-84dd-5f04719cd7a0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bdesignation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="130" width="158" height="20" uuid="b5ab4cbc-8ab5-4d8e-aad4-0895078b270a"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner Code*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="128" width="326" height="22" uuid="75a4417a-b3f2-4aca-a03d-a310b807eb42"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bemp_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="33" y="170" width="158" height="20" uuid="5d0bb6c7-cf3e-41e8-b766-2b1b8f9b4386"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="205" y="168" width="328" height="22" uuid="729ca6f6-3ac4-487b-8fe3-25c02ecadd1b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{baddrs}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="210" width="158" height="20" uuid="46dfa699-cbfd-477f-9809-045cd926e42a"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner City]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="208" width="334" height="22" uuid="c7de68ca-e6e1-4b3d-a629-0e85f769f579"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bcity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="250" width="154" height="20" uuid="927210df-91f6-4a43-9b75-b20c8c05ea99"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner State]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="201" y="248" width="324" height="22" uuid="6d265808-fa0f-4fa2-8932-9a86b011ae22"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bstate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="292" width="160" height="20" uuid="cf125e31-a85e-45cb-882b-ccbdcd00ae7a"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner Pin*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="290" width="316" height="22" uuid="c2409ae9-aee4-4348-81f6-e7375398fb72"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bpin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="350" width="160" height="20" uuid="ee9f21c9-0325-4c0e-b765-40fafefb4ff0"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner Mobile*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="193" y="348" width="318" height="22" uuid="54d8a3eb-4ef7-49a9-88ed-2d601a477cf5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bmobile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="383" width="160" height="20" uuid="925e3856-d99d-4428-a453-94ce2414a15c"/>
+				<textElement>
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Owner Email*]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="193" y="381" width="314" height="22" uuid="2c6d1b5a-20d7-493b-b7f0-89ac675d2e25"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bauth_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="202" y="480" width="283" height="40" uuid="5cbf3ea6-368e-4f26-badc-205bdc31bec9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Signature of the Applicant with date and seal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="550" width="325" height="46" uuid="2c95faea-5535-4e52-be6a-70f24c368d70"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Signature of the Reporting/Nodal/Forwarding Officer with date and seal ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="620" width="325" height="43" uuid="21f13fd6-4c8b-45fb-a09d-bd5cb7f1274e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Signature of NIC COORDINATOR with date and seal]]></text>
+			</staticText>
+		</band>
+		<band height="700">
+			<rectangle>
+				<reportElement x="0" y="49" width="560" height="631" backcolor="#FCCFD7" uuid="7b67dca2-10fb-45ba-8f2a-7cf396a6ca56"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="15" y="55" width="535" height="595" uuid="6c35eee7-b136-401c-bd22-7ee48f5422bf"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[1. Users are requested to install the personal firewall software to secure their machine and e-mail traffic.
+
+ 2. Users are requested to install the Antivirus software with latest pattern update periodically and OS patches in their system. 
+
+ 3. If using Outlook, Outlook Express, Mozilla Firefox on Microsoft WINDOWS, please apply the appropriate patches announced by the Microsoft/ Mozilla from time to time. 
+
+ 4. NIC is not responsible for the contents that are being sent as part of the mail. The views expressed are solely that of the originator. 
+
+ 5. NIC will take all possible measures to prevent data loss, however, due to unforeseen technical issues, if the same happens, NIC cannot be held responsible.
+
+ 6. User is responsible for his/her data. In case he/she accidentally deletes data, he/she will not ask NIC to restore it. Individuals are responsible for saving email messages as they deem appropriate. Messages will be automatically purged from folders as follows:      Trash - 7 days     ProbablySpam – 7 days 
+
+ 7. NIC account will be deactivated, if not used for 90 days. 
+
+ 8. Email id will be deleted after a period of 9 months from the date of deactivation if no request for activation is received.
+
+ 9. Contact our 24x7 support if you have any problems. Phone <b>1800-111-555</b> or you can send mail to servicedesk.nic.in 
+
+ 10. Please note that advance payment is a must for paid users. 
+
+ 11. NIC coordinator reserves the right to ask for supporting documents like copy of identify card or any other document deemed appropriate to confirm the credentials of the applicant. 
+
+ 12. NIC will not share the details of Email Accounts and Email Addresses with anyone unless authorized by Reporting/Nodal/Forwarding Officer of the Department.
+
+ 13. NIC does not capture any aadhaar related information.
+ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="7" width="180" height="37" forecolor="#F70E0A" uuid="230bca2c-d966-40f2-bad2-c59a59c43e64"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terms and Conditions]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="230" y="20" width="100" height="30" uuid="a60e7486-52d0-4b38-9345-99bf99fe2baf"/>
+				<text><![CDATA[Page footer]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="10" y="10" width="550" height="50" forecolor="#050505" backcolor="#D14B4E" uuid="cd65eaeb-2e25-4b49-bea5-367705fd9448"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="50" y="20" width="490" height="23" forecolor="#FCFAFA" uuid="e97d18bf-8df5-48ae-916e-bf3e45bf7df6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address: 3rd Floor, Block III, Delhi IT Park, Shastri Park, Delhi, 110053]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="50" splitType="Stretch"/>
+	</summary>
+</jasperReport>

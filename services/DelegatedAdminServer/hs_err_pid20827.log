@@ -1,0 +1,68 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f2501be1ad5, pid=20827, tid=11057
+#
+# JRE version: OpenJDK Runtime Environment (14.0.2+12) (build 14.0.2+12-46)
+# Java VM: OpenJDK 64-Bit Server VM (14.0.2+12-46, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# J 1010 c1 java.nio.DirectIntBufferU.get(I)I java.base@14.0.2 (33 bytes) @ 0x00007f2501be1ad5 [0x00007f2501be1a40+0x0000000000000095]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e %P %I %h" (or dumping to /home/preeti/Downloads/sunny/11-2022/project/webservice/eform-server/services/DelegatedAdminServer/core.20827)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:38062 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=36825 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=DelegatedAdminServer -javaagent:/home/preeti/Desktop/SunnyVerma/sts-4.8.0.RELEASE/configuration/org.eclipse.osgi/257/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 in.nic.eForms.SingleEmailApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz, 8 cores, 15G, CentOS Linux release 7.6.1810 (Core) 
+Time: Mon Aug 16 12:54:59 2021 IST elapsed time: 334155 seconds (3d 20h 49m 15s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f246403d800):  JavaThread "restartedMain" [_thread_in_Java, id=11057, stack(0x00007f24734f8000,0x00007f24735f9000)]
+
+Stack: [0x00007f24734f8000,0x00007f24735f9000],  sp=0x00007f24735f5a70,  free space=1014k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J 1010 c1 java.nio.DirectIntBufferU.get(I)I java.base@14.0.2 (33 bytes) @ 0x00007f2501be1ad5 [0x00007f2501be1a40+0x0000000000000095]
+J 1111 c1 jdk.internal.jimage.BasicImageReader.findLocation(Ljava/lang/String;Ljava/lang/String;)Ljdk/internal/jimage/ImageLocation; java.base@14.0.2 (115 bytes) @ 0x00007f2501c0a644 [0x00007f2501c0a440+0x0000000000000204]
+J 1114 c1 jdk.internal.module.SystemModuleFinders$SystemModuleReader.findImageLocation(Ljava/lang/String;)Ljdk/internal/jimage/ImageLocation; java.base@14.0.2 (42 bytes) @ 0x00007f2501c0f11c [0x00007f2501c0f080+0x000000000000009c]
+J 1115 c1 jdk.internal.module.SystemModuleFinders$SystemModuleReader.find(Ljava/lang/String;)Ljava/util/Optional; java.base@14.0.2 (54 bytes) @ 0x00007f2501c0f934 [0x00007f2501c0f8e0+0x0000000000000054]
+J 1579 c1 jdk.internal.loader.BuiltinClassLoader$2.run()Ljava/util/List; java.base@14.0.2 (114 bytes) @ 0x00007f2501cff3cc [0x00007f2501cff2a0+0x000000000000012c]
+J 1573 c1 jdk.internal.loader.BuiltinClassLoader.findMiscResource(Ljava/lang/String;)Ljava/util/List; java.base@14.0.2 (118 bytes) @ 0x00007f2501cfc684 [0x00007f2501cfc280+0x0000000000000404]
+J 1582 c1 jdk.internal.loader.BuiltinClassLoader.findResource(Ljava/lang/String;)Ljava/net/URL; java.base@14.0.2 (154 bytes) @ 0x00007f2501d00644 [0x00007f2501d00460+0x00000000000001e4]
+J 2221 c1 java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL; java.base@14.0.2 (41 bytes) @ 0x00007f2501e0c3ec [0x00007f2501e0c360+0x000000000000008c]
+J 2221 c1 java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL; java.base@14.0.2 (41 bytes) @ 0x00007f2501e0c3cc [0x00007f2501e0c360+0x000000000000006c]
+J 4075 c1 org.springframework.boot.devtools.restart.classloader.RestartClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL; (48 bytes) @ 0x00007f2502129634 [0x00007f2502129380+0x00000000000002b4]
+J 4176 c1 java.net.URLClassLoader.getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream; java.base@14.0.2 (142 bytes) @ 0x00007f25021573a4 [0x00007f2502157340+0x0000000000000064]
+J 4180 c1 org.springframework.core.io.ClassPathResource.getInputStream()Ljava/io/InputStream; (88 bytes) @ 0x00007f250215946c [0x00007f25021593e0+0x000000000000008c]
+J 3992 c1 org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(Lorg/springframework/core/io/Resource;)Lorg/springframework/asm/ClassReader; (119 bytes) @ 0x00007f2502104ecc [0x00007f2502104ea0+0x000000000000002c]
+J 3990 c1 org.springframework.core.type.classreading.SimpleMetadataReader.<init>(Lorg/springframework/core/io/Resource;Ljava/lang/ClassLoader;)V (37 bytes) @ 0x00007f2502103b2c [0x00007f2502103a60+0x00000000000000cc]
+J 4627 c1 org.springframework.core.type.classreading.CachingMetadataReaderFactory.getMetadataReader(Lorg/springframework/core/io/Resource;)Lorg/springframework/core/type/classreading/MetadataReader; (115 bytes) @ 0x00007f2502231c84 [0x00007f2502231940+0x0000000000000344]
+J 3972 c1 org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(Ljava/lang/String;)Lorg/springframework/core/type/classreading/MetadataReader; (156 bytes) @ 0x00007f25020fc80c [0x00007f25020fc580+0x000000000000028c]
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer$BeanMethods.findBeanMethods(Lorg/springframework/boot/autoconfigure/diagnostics/analyzer/NoSuchBeanDefinitionFailureAnalyzer$Source;Lorg/springframework/beans/factory/NoSuchBeanDefinitionException;)Ljava/util/List;+11
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer$BeanMethods.<init>(Lorg/springframework/boot/autoconfigure/diagnostics/analyzer/NoSuchBeanDefinitionFailureAnalyzer;Lorg/springframework/boot/autoconfigure/diagnostics/analyzer/NoSuchBeanDefinitionFailureAnalyzer$Source;Lorg/springframework/beans/factory/NoSuchBeanDefinitionException;)V+13
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer.collectReportedConditionOutcomes(Lorg/springframework/beans/factory/NoSuchBeanDefinitionException;Lorg/springframework/boot/autoconfigure/diagnostics/analyzer/NoSuchBeanDefinitionFailureAnalyzer$Source;Lorg/springframework/boot/autoconfigure/condition/ConditionEvaluationReport$ConditionAndOutcomes;Ljava/util/List;)V+15
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer.lambda$collectReportedConditionOutcomes$1(Lorg/springframework/beans/factory/NoSuchBeanDefinitionException;Ljava/util/List;Ljava/lang/String;Lorg/springframework/boot/autoconfigure/condition/ConditionEvaluationReport$ConditionAndOutcomes;)V+13
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer$$Lambda$1562.accept(Ljava/lang/Object;Ljava/lang/Object;)V+20
+J 8742 c1 java.util.TreeMap.forEach(Ljava/util/function/BiConsumer;)V java.base@14.0.2 (58 bytes) @ 0x00007f2502948314 [0x00007f2502948260+0x00000000000000b4]
+J 4257 c1 java.util.Collections$UnmodifiableMap.forEach(Ljava/util/function/BiConsumer;)V java.base@14.0.2 (11 bytes) @ 0x00007f250217fffc [0x00007f250217ffa0+0x000000000000005c]
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer.collectReportedConditionOutcomes(Lorg/springframework/beans/factory/NoSuchBeanDefinitionException;Ljava/util/List;)V+15
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer.getAutoConfigurationResults(Lorg/springframework/beans/factory/NoSuchBeanDefinitionException;)Ljava/util/List;+11
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer.analyze(Ljava/lang/Throwable;Lorg/springframework/beans/factory/NoSuchBeanDefinitionException;Ljava/lang/String;)Lorg/springframework/boot/diagnostics/FailureAnalysis;+11
+j  org.springframework.boot.autoconfigure.diagnostics.analyzer.NoSuchBeanDefinitionFailureAnalyzer.analyze(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/String;)Lorg/springframework/boot/diagnostics/FailureAnalysis;+7
+j  org.springframework.boot.diagnostics.analyzer.AbstractInjectionFailureAnalyzer.analyze(Ljava/lang/Throwable;Ljava/lang/Throwable;)Lorg/springframework/boot/diagnostics/FailureAnalysis;+8
+j  org.springframework.boot.diagnostics.AbstractFailureAnalyzer.analyze(Ljava/lang/Throwable;)Lorg/springframework/boot/diagnostics/FailureAnalysis;+17
+j  org.springframework.boot.diagnostics.FailureAnalyzers.analyze(Ljava/lang/Throwable;Ljava/util/List;)Lorg/springframework/boot/diagnostics/FailureAnalysis;+30
+j  org.springframework.boot.diagnostics.FailureAnalyzers.reportException(Ljava/lang/Throwable;)Z+6
+j  org.springframework.boot.SpringApplication.reportFailure(Ljava/util/Collection;Ljava/lang/Throwable;)V+30
+j  org.springframework.boot.SpringApplication.handleRunFailure(Lorg/springframework/context/ConfigurableApplicationContext;Ljava/lang/Throwable;Ljava/util/Collection;Lorg/springframework/boot/SpringApplicationRunListeners;)V+21
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+184
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  org.springframework.boot.SpringApplication.run(Ljava/lang/Class;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  in.nic.eForms.SingleEmailApplication.main([Ljava/lang/String;)V+3
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x78e42b]

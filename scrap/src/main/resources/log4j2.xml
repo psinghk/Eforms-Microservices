@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
+    </Console>
+    
+    
+   <!--  <File name="MyFileinfo" fileName="D://ImapPopLogs/temp/appinfo.log">
+      <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
+    </File> -->
+    <RollingFile name="MyFileinfo"
+            fileName="D://ImapPopLogs/temp/appinfo.log"
+            filePattern="D://ImapPopLogs/temp/$${date:yyyy-MM}/spring-boot-loggerappinfo-log4j2-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- rollover on startup, daily and when the file reaches 
+                    10 MegaBytes -->
+                <OnStartupTriggeringPolicy />
+             <!--    <SizeBasedTriggeringPolicy
+                    size="10 MB" /> -->
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    
+    
+    
+     <!--  <File name="MyFilewarn" fileName="D://ImapPopLogs/temp/appwarn.log">
+      <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
+    </File> -->
+     <RollingFile name="MyFilewarn"
+            fileName="D://ImapPopLogs/temp/appwarn.log"
+            filePattern="D://ImapPopLogs/temp/$${date:yyyy-MM}/spring-boot-loggerappwarn-log4j2-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- rollover on startup, daily and when the file reaches 
+                    10 MegaBytes -->
+                <OnStartupTriggeringPolicy />
+             <!--    <SizeBasedTriggeringPolicy
+                    size="10 MB" /> -->
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    
+    
+    
+    
+    
+  <!--   <File name="MyFileerror" fileName="D://ImapPopLogs/temp/apperror.log">
+      <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
+    </File>
+     -->
+      <RollingFile name="MyFileerror"
+            fileName="D://ImapPopLogs/temp/apperror.log"
+            filePattern="D://ImapPopLogs/temp/$${date:yyyy-MM}/spring-boot-loggerapperror-log4j2-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- rollover on startup, daily and when the file reaches 
+                    10 MegaBytes -->
+                <OnStartupTriggeringPolicy />
+             <!--    <SizeBasedTriggeringPolicy
+                    size="10 MB" /> -->
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+ <!--     <File name="MyFiledebug" fileName="D://ImapPopLogs/temp/appdebug.log">
+      <PatternLayout pattern="%d %-7level %logger{36} - %msg%n"/>
+    </File> -->
+    
+     <RollingFile name="MyFiledebug"
+            fileName="D://ImapPopLogs/temp/appdebug.log"
+            filePattern="D://ImapPopLogs/temp/$${date:yyyy-MM}/spring-boot-loggerappdebug-log4j2-%d{-dd-MMMM-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- rollover on startup, daily and when the file reaches 
+                    10 MegaBytes -->
+                <OnStartupTriggeringPolicy />
+               <!--  <SizeBasedTriggeringPolicy
+                    size="2 MB" /> -->
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="info">
+      <!-- Only events at DIAG level or more specific are sent to the console. -->
+      <AppenderRef ref="Console"/>
+       <AppenderRef ref="MyFiledebug" level="debug" />
+      <AppenderRef ref="MyFileinfo" level="info" />
+      <AppenderRef ref="MyFilewarn" level="warn" />
+      <AppenderRef ref="MyFileerror" level="error" />
+    </Root>
+  </Loggers>
+</Configuration>

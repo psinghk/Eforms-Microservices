@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f59b95b0231, pid=32229, tid=32247
+#
+# JRE version: OpenJDK Runtime Environment (14.0.2+12) (build 14.0.2+12-46)
+# Java VM: OpenJDK 64-Bit Server VM (14.0.2+12-46, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x4231]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x71
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e %P %I %h" (or dumping to /home/preeti/Desktop/SunnyVerma/workspace1/SingleServer5/core.32229)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:41974 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=35185 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Djava.security.egd=file:/dev/./urandom -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=SingleServer5 -javaagent:/home/preeti/Downloads/sts-4.8.0.RELEASE/configuration/org.eclipse.osgi/257/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 in.nic.eForms.SingleEmailApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz, 8 cores, 15G, CentOS Linux release 7.6.1810 (Core) 
+Time: Wed Feb 17 17:30:43 2021 IST elapsed time: 16240 seconds (0d 4h 30m 40s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f59b02a6800):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=32247, stack(0x00007f5994beb000,0x00007f5994cec000)]
+
+Stack: [0x00007f5994beb000,0x00007f5994cec000],  sp=0x00007f5994ce91f0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x4231]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x71
+C  [libjimage.so+0x4d7a]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x3a
+C  [libjimage.so+0x5271]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x50f473]
